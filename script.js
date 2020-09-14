@@ -7,9 +7,9 @@ const disco2 = document.getElementById("disco2");
 const disco3 = document.getElementById("disco3");
 const disco4 = document.getElementById("disco4");
 
-//fazer o handler com append no DOM
+//fazer o handler com append no DOM - JULIA
 
-//verificação de peça de menor / definir peso da peça / condição de movimento de peça
+//verificação de peça de menor / definir peso da peça / condição de movimento de peça - ARY
 
 //verificação do número máximo de peças por torre
 
