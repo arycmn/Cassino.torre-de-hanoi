@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.torres {
+  border: 2px solid black;
+  width: 33.33%;
+  height: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#disco1 {
+  width: 100%;
+  background-color: green;
+}
+
+#disco2 {
+  width: 85%;
+  background-color: blue;
+}
+
+#disco3 {
+  width: 65%;
+  background-color: red;
+}
+
+#disco4 {
+  width: 45%;
+  background-color: yellow;
+}
+
+.discos {
+  height: 60px;
+  margin: 0 auto;
+}
