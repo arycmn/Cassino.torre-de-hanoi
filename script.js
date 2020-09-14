@@ -48,7 +48,7 @@ function pegaDisco(target) {
   ultimaPeca = target.lastElementChild;
   console.log("estagio 01")
   if (ultimaPeca !== null) {
-    ultimaPeca.style.marginBottom = "20px"
+    ultimaPeca.style.marginBottom = "60px"
     estagio = 2;
   }
   //pegar quem foi clicado
