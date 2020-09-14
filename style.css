@@ -2,15 +2,22 @@
   margin: 0;
   padding: 0;
 }
-
+html{
+  font-size: 16px;
+}
 section {
   display: flex;
   justify-content: space-around;
 }
+h1 {
+  text-align: center;
+  margin: 40px 0px;
+  font-size: 3rem;
+}
 
 .torres {
   border: 2px solid black;
-  width: 33.33%;
+  width: 25%;
   height: 300px;
   display: flex;
   flex-direction: column-reverse;
@@ -39,4 +46,10 @@ section {
 .discos {
   height: 60px;
   margin: 0 auto;
+}
+
+#resposta {
+  text-align: center;
+  font-size: 10rem;
+  margin: 40px 0px;
 }
