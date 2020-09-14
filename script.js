@@ -26,7 +26,8 @@ let disco4 = {
   tamanho: 4,
   posicao: document.getElementById("disco4"),
 };
-
+let alvo
+let pecaDeComparacao
 let ultimaPeca
 let estagio
 
@@ -47,18 +48,32 @@ function pegaDisco(target) {
   ultimaPeca = target.lastElementChild;
   console.log("estagio 01")
   if (ultimaPeca !== null) {
+    ultimaPeca.style.marginBottom = "20px"
     estagio = 2;
   }
   //pegar quem foi clicado
 }
 
 function soltaDisco(target) {
-  let pecaDeComparacao = target.lastElementChild;
-  target.appendChild(ultimaPeca)
+  pecaDeComparacao = target.lastElementChild;
+  ultimaPeca.style.marginBottom = "0px"
+  console.log(pecaDeComparacao)
+  if (pecaDeComparacao === null) {
+
+    target.appendChild(ultimaPeca)
+
+  } else if (pecaDeComparacao.clientWidth > ultimaPeca.clientWidth) {
+    target.appendChild(ultimaPeca)
+
+  }
+
+
   console.log("estagio 02")
   estagio = 1;
 
+
 }
+
 
 
 //verificação de peça de menor / definir peso da peça / condição de movimento de peça - ARY
