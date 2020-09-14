@@ -1,13 +1,49 @@
-const torre1 = document.getElementById("torre1");
-const torre2 = document.getElementById("torre2");
-const torre3 = document.getElementById("torre3");
+let torre1 = {
+  posicao: document.getElementById("torre1"),
+  contador: 0,
+};
+let torre2 = {
+  posicao: document.getElementById("torre2"),
+  contador: 0,
+};
+let torre3 = {
+  posicao: document.getElementById("torre3"),
+  contador: 0,
+};
+let disco1 = {
+  tamanho: 1,
+  posicao: document.getElementById("disco1"),
+};
+let disco2 = {
+  tamanho: 2,
+  posicao: document.getElementById("disco2"),
+};
+let disco3 = {
+  tamanho: 3,
+  posicao: document.getElementById("disco3"),
+};
+let disco4 = {
+  tamanho: 4,
+  posicao: document.getElementById("disco4"),
+};
 
-const disco1 = document.getElementById("disco1");
-const disco2 = document.getElementById("disco2");
-const disco3 = document.getElementById("disco3");
-const disco4 = document.getElementById("disco4");
+torre1.addEventListener("onclick", pegaDisco(torre1), false);
+torre2.addEventListener("onclick", pegaDisco(torre2), false);
+torre3.addEventListener("onclick", pegaDisco(torre3), false);
 
-//fazer o handler com append no DOM - JULIA
+e.currentTarget.addEventListener("onclick", soltaDisco(e), false);
+
+function pegaDisco(e) {
+  let event = e.currentTarget;
+  soltaDisco();
+  //pegar quem foi clicado
+}
+
+function soltaDisco() {
+  //appendChild
+}
+
+console.log(document.getElementById("torre1"));
 
 //verificação de peça de menor / definir peso da peça / condição de movimento de peça - ARY
 
@@ -16,3 +52,10 @@ const disco4 = document.getElementById("disco4");
 //contador de cliques
 
 //condição de vitória / mensagem de vitória
+
+function verificaTamanhoPeca(pecaA, pecaB) {
+  return pecaB.tamanho < pecaA.tamanho;
+}
+function condicaoDeVitoria() {
+  return torre2.contador === 4 || torre3.contador === 4;
+}
