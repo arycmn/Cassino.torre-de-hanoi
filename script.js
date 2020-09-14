@@ -26,20 +26,29 @@ let disco4 = {
   tamanho: 4,
   posicao: document.getElementById("disco4"),
 };
-
-torre1.addEventListener("onclick", pegaDisco(torre1), false);
-torre2.addEventListener("onclick", pegaDisco(torre2), false);
-torre3.addEventListener("onclick", pegaDisco(torre3), false);
-
-e.currentTarget.addEventListener("onclick", soltaDisco(e), false);
+let ultimaPeca
+let estaSelecionado =false
+if (estaSelecionado === false) {
+  torre1.posicao.addEventListener("click", pegaDisco);
+  torre2.posicao.addEventListener("click", pegaDisco);
+  torre3.posicao.addEventListener("click", pegaDisco);
+}
+// e.currentTarget.addEventListener("onclick", soltaDisco(e), false);
 
 function pegaDisco(e) {
-  let event = e.currentTarget;
-  soltaDisco();
+  ultimaPeca = e.currentTarget.lastElementChild;
+  // console.log(ultimaPeca)
+  estaSelecionado = true
+  torre1.posicao.addEventListener("click", soltaDisco);
+  torre2.posicao.addEventListener("click", soltaDisco);
+  torre3.posicao.addEventListener("click", soltaDisco);
   //pegar quem foi clicado
 }
 
-function soltaDisco() {
+function soltaDisco(e) {
+  let output = e.currentTarget
+  console.log(output)
+  // output.appendchild(ultimaPeca);
   //appendChild
 }
 
