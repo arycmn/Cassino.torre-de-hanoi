@@ -26,19 +26,18 @@ let disco4 = {
   tamanho: 4,
   posicao: document.getElementById("disco4"),
 };
+
 let ultimaPeca
-let estaSelecionado =false
-if (estaSelecionado === false) {
-  torre1.posicao.addEventListener("click", pegaDisco);
-  torre2.posicao.addEventListener("click", pegaDisco);
-  torre3.posicao.addEventListener("click", pegaDisco);
-}
+
+torre1.posicao.addEventListener("click", pegaDisco);
+torre2.posicao.addEventListener("click", pegaDisco);
+torre3.posicao.addEventListener("click", pegaDisco);
+estaSelecionado = true;
+
 // e.currentTarget.addEventListener("onclick", soltaDisco(e), false);
 
 function pegaDisco(e) {
   ultimaPeca = e.currentTarget.lastElementChild;
-  // console.log(ultimaPeca)
-  estaSelecionado = true
   torre1.posicao.addEventListener("click", soltaDisco);
   torre2.posicao.addEventListener("click", soltaDisco);
   torre3.posicao.addEventListener("click", soltaDisco);
@@ -46,13 +45,12 @@ function pegaDisco(e) {
 }
 
 function soltaDisco(e) {
-  let output = e.currentTarget
-  console.log(output)
+  let output = e.currentTarget;
+  document.(e.currentTarget).appendChild(ultimaPeca)
   // output.appendchild(ultimaPeca);
   //appendChild
 }
 
-console.log(document.getElementById("torre1"));
 
 //verificação de peça de menor / definir peso da peça / condição de movimento de peça - ARY
 
