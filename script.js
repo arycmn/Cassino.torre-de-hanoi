@@ -57,7 +57,7 @@ function pegaDisco(target) {
 function soltaDisco(target) {
   pecaDeComparacao = target.lastElementChild;
   ultimaPeca.style.marginBottom = "0px"
-  console.log(pecaDeComparacao)
+
   if (pecaDeComparacao === null) {
 
     target.appendChild(ultimaPeca)
@@ -67,12 +67,22 @@ function soltaDisco(target) {
 
   }
 
-
   console.log("estagio 02")
   estagio = 1;
 
-
+  condicaoDeVitoria()
 }
+
+function condicaoDeVitoria() {
+
+  if (torre2.posicao.childElementCount === 4 || torre3.posicao.childElementCount === 4) {
+    let p = document.createElement("p")
+    let div = document.getElementById("resposta")
+    p.innerHTML = "Parabéns você Venceu!!"
+    div.appendChild(p)
+  }
+}
+
 
 
 
@@ -83,10 +93,3 @@ function soltaDisco(target) {
 //contador de cliques
 
 //condição de vitória / mensagem de vitória
-
-function verificaTamanhoPeca(pecaA, pecaB) {
-  return pecaB.tamanho < pecaA.tamanho;
-}
-function condicaoDeVitoria() {
-  return torre2.contador === 4 || torre3.contador === 4;
-}
