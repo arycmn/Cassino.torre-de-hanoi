@@ -35,8 +35,6 @@ torre2.posicao.addEventListener("click", seletorDeEstagio);
 torre3.posicao.addEventListener("click", seletorDeEstagio);
 
 
-// e.currentTarget.addEventListener("onclick", soltaDisco(e), false);
-
 function seletorDeEstagio(e) {
   let target = e.currentTarget
   if (estagio === 2) {
@@ -48,17 +46,18 @@ function seletorDeEstagio(e) {
 function pegaDisco(target) {
   ultimaPeca = target.lastElementChild;
   console.log("estagio 01")
-  estagio = 2;
+  if (ultimaPeca !== null) {
+    estagio = 2;
+  }
   //pegar quem foi clicado
 }
 
 function soltaDisco(target) {
+  let pecaDeComparacao = target.lastElementChild;
   target.appendChild(ultimaPeca)
   console.log("estagio 02")
   estagio = 1;
 
-  // output.appendchild(ultimaPeca);
-  //appendChild
 }
 
 
