@@ -110,7 +110,7 @@ cronometro();
 //Score
 function marcaScore() {
   let score = Math.floor(
-    1000 + 16.6666666667 * contador - contadorDeJogadas * 100
+    2000 + 16.6666666667 * contador - contadorDeJogadas * 100
   );
   dolar = score;
   document.getElementById("score").innerText = score;
