@@ -85,3 +85,19 @@ function condicaoDeVitoria() {
     div.appendChild(p);
   }
 }
+
+//Contador de Tempo de resolução do Desafio
+let contador = 60
+function cronometro (){
+  document.getElementById('tempo').innerText = contador
+  console.log(contador)
+
+  if(contador == 0) {
+		alert = "GAME OVER";
+	}
+	if (contador != 0){
+		contador = contador-1;
+		setTimeout("cronometro()", 1000);
+	}
+}
+cronometro()
