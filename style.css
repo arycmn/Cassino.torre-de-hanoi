@@ -106,3 +106,10 @@ h1 {
   margin: 40px 0px;
   color: white;
 }
+
+#informacoes {
+  margin: 0 auto;
+  font-size: 2rem;
+  background-color: white;
+  width: fit-content;
+}
