@@ -2,58 +2,98 @@
   margin: 0;
   padding: 0;
 }
-html{
+
+#body2 {
+  font-family: "Lobster", cursive;
   font-size: 16px;
+  background-image: url("./assets/cassino.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  text-shadow: 4px 4px 4px black;
+  overflow: hidden;
 }
 section {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  opacity: 80%;
 }
+
 h1 {
   text-align: center;
   margin: 40px 0px;
-  font-size: 3rem;
+  font-size: 7rem;
+  color: red;
 }
 
 .torres {
-  background-position: center;
-  background-position-x: 20;
-  background-image:url(https://i.ibb.co/dMGHbdh/bastao.png);
-  width: 25%;
-  height: 300px;
+  width: 18%;
+  height: 450px;
   display: flex;
   flex-direction: column-reverse;
+  border-bottom: 3px outset;
+  border: 4px groove;
+  border-radius: 10%;
+  cursor: pointer;
+  background-color: whitesmoke;
 }
 
 #disco1 {
-  width: 100%;
-  background-color: green;
+  width: 95%;
 }
 
 #disco2 {
-  width: 85%;
-  background-color: blue;
+  width: 80%;
 }
 
 #disco3 {
-  width: 65%;
-  background-color: red;
+  width: 60%;
 }
 
 #disco4 {
-  width: 45%;
-  background-color: yellow;
+  width: 40%;
 }
 
 .discos {
-  height: 40px;
+  height: 80px;
   margin: 0 auto;
-  z-index: 10;
+  border-radius: 15%;
+  border-style: outset;
+  background-color: red;
+}
+
+#disco1:hover,
+#disco2:hover,
+#disco3:hover,
+#disco4:hover {
+  background-color: rgb(241, 70, 70);
+}
+
+.torres:hover {
+  background-color: whitesmoke;
 }
 
 #resposta {
   text-align: center;
   font-size: 10rem;
   margin: 40px 0px;
+  color: white;
 }
 
+#body1 {
+  background-image: url("./assets/backmenu.jpg");
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+
+#bttStart {
+  background-color: red;
+  width: 200px;
+  color: whitesmoke;
+  font-size: 50px;
+  border-style: outset;
+  border-radius: 50%;
+}

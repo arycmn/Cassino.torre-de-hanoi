@@ -1,3 +1,4 @@
+// Objetos que definem as torres e os discos
 let torre1 = {
   posicao: document.getElementById("torre1"),
   contador: 0,
@@ -26,70 +27,61 @@ let disco4 = {
   tamanho: 4,
   posicao: document.getElementById("disco4"),
 };
-let alvo
-let pecaDeComparacao
-let ultimaPeca
-let estagio
+
+let alvo;
+let pecaDeComparacao;
+let ultimaPeca;
+let estagio;
 
 torre1.posicao.addEventListener("click", seletorDeEstagio);
 torre2.posicao.addEventListener("click", seletorDeEstagio);
 torre3.posicao.addEventListener("click", seletorDeEstagio);
 
-
+//Função que seleciona se é estagio de pegar ou dropar o disco
 function seletorDeEstagio(e) {
-  let target = e.currentTarget
+  let target = e.currentTarget;
   if (estagio === 2) {
-    soltaDisco(target)
+    soltaDisco(target);
   } else {
-    pegaDisco(target)
+    pegaDisco(target);
   }
 }
+
+//Função que pega/seleciona o disco
 function pegaDisco(target) {
   ultimaPeca = target.lastElementChild;
-  console.log("estagio 01")
+  console.log("estagio 01");
   if (ultimaPeca !== null) {
-    ultimaPeca.style.marginBottom = "60px"
+    ultimaPeca.style.marginBottom = "60px";
     estagio = 2;
   }
-  //pegar quem foi clicado
 }
 
+//Função de dropa o disco
 function soltaDisco(target) {
   pecaDeComparacao = target.lastElementChild;
-  ultimaPeca.style.marginBottom = "0px"
+  ultimaPeca.style.marginBottom = "0px";
 
   if (pecaDeComparacao === null) {
-
-    target.appendChild(ultimaPeca)
-
+    target.appendChild(ultimaPeca);
   } else if (pecaDeComparacao.clientWidth > ultimaPeca.clientWidth) {
-    target.appendChild(ultimaPeca)
-
+    target.appendChild(ultimaPeca);
   }
-
-  console.log("estagio 02")
+  console.log("estagio 02");
   estagio = 1;
 
-  condicaoDeVitoria()
+  condicaoDeVitoria();
 }
 
+//Condição de Vitória - ADD DIV GRANDE DE VITORIA
 function condicaoDeVitoria() {
-
-  if (torre2.posicao.childElementCount === 4 || torre3.posicao.childElementCount === 4) {
-    let p = document.createElement("p")
-    let div = document.getElementById("resposta")
-    p.innerHTML = "Parabéns você Venceu!!"
-    div.appendChild(p)
+  if (
+    torre2.posicao.childElementCount === 4 ||
+    torre3.posicao.childElementCount === 4
+  ) {
+    let p = document.createElement("p");
+    let div = document.getElementById("resposta");
+    p.innerHTML = "Parabéns você Venceu!!";
+    div.appendChild(p);
   }
 }
-
-
-
-
-//verificação de peça de menor / definir peso da peça / condição de movimento de peça - ARY
-
-//verificação do número máximo de peças por torre
-
-//contador de cliques
-
-//condição de vitória / mensagem de vitória
