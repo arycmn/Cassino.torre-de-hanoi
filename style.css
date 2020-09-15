@@ -27,9 +27,10 @@
   text-shadow: 4px 4px 4px black;
   border: none;
   cursor: pointer;
-  
 }
-#bttStart:focus {outline: none}
+#bttStart:focus {
+  outline: none;
+}
 
 #bttStart:hover {
   color: red;
@@ -137,4 +138,7 @@ section {
   border-radius: 20%;
   text-shadow: none;
   text-align: center;
+}
+
+#sound {
 }
