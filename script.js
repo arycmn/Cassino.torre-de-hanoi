@@ -32,10 +32,13 @@ let alvo;
 let pecaDeComparacao;
 let ultimaPeca;
 let estagio;
+let btnplay = document.getElementById("linkStart");
 
+// btnplay.addEventListener("click", cronometro);
 torre1.posicao.addEventListener("click", seletorDeEstagio);
 torre2.posicao.addEventListener("click", seletorDeEstagio);
 torre3.posicao.addEventListener("click", seletorDeEstagio);
+
 
 //Função que seleciona se é estagio de pegar ou dropar o disco
 function seletorDeEstagio(e) {
@@ -98,14 +101,14 @@ function cronometro (){
 	if (contador != 0){
 		contador = contador-1;
 		setTimeout("cronometro()", 1000);
-	}
+  }
   marcaScore()
 }
 cronometro()
 
 //Score
-// let score = 1000+(16.666666667*contador)
-// function marcaScore (){
-//   document.getElementById('score').innerText = score
-//   console.log(score)
-// }
+function marcaScore (){
+  let score = Math.floor(1000+(16.6666666667*contador))
+  document.getElementById('score').innerText = score
+  console.log(score)
+}

@@ -27,7 +27,9 @@
   text-shadow: 4px 4px 4px black;
   border: none;
   cursor: pointer;
+  
 }
+#bttStart:focus {outline: none}
 
 #bttStart:hover {
   color: red;
