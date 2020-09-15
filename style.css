@@ -117,10 +117,6 @@ section {
   background-color: yellow;
 }
 
-/* .torres:hover {
-  background-color: whitesmoke;
-} */
-
 #resposta {
   text-align: center;
   font-size: 10rem;
@@ -161,6 +157,7 @@ section {
     width: 50%;
     padding-top: 40px;
   }
+}
   #bttStart {
     font-size: 7rem;
   }
