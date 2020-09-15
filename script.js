@@ -93,11 +93,19 @@ function cronometro (){
   console.log(contador)
 
   if(contador == 0) {
-		alert = "GAME OVER";
+		alert("GAME OVER");
 	}
 	if (contador != 0){
 		contador = contador-1;
 		setTimeout("cronometro()", 1000);
 	}
+  marcaScore()
 }
 cronometro()
+
+//Score
+// let score = 1000+(16.666666667*contador)
+// function marcaScore (){
+//   document.getElementById('score').innerText = score
+//   console.log(score)
+// }
