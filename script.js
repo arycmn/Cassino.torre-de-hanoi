@@ -33,6 +33,7 @@ let pecaDeComparacao;
 let ultimaPeca;
 let estagio;
 let contadorDeJogadas = 0;
+let dolar = 2000
 
 // btnplay.addEventListener("click", cronometro);
 torre1.posicao.addEventListener("click", seletorDeEstagio);
@@ -96,8 +97,9 @@ function cronometro (){
   document.getElementById('tempo').innerText = contador
   console.log(contador)
 
-  if(contador == 0) {
-		alert("GAME OVER");
+  if(contador == 0 || dolar <= 0) {
+    alert("GAME OVER");
+    
 	}
 	if (contador != 0){
 		contador = contador-1;
@@ -110,6 +112,7 @@ cronometro()
 //Score
 function marcaScore (){
   let score = Math.floor(1000+(16.6666666667*contador)-(contadorDeJogadas* 100))
+  dolar = score
   document.getElementById('score').innerText = score
   console.log(score)
 }
