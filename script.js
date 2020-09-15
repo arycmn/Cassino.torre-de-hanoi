@@ -32,7 +32,7 @@ let alvo;
 let pecaDeComparacao;
 let ultimaPeca;
 let estagio;
-let btnplay = document.getElementById("linkStart");
+let contadorDeJogadas = 0;
 
 // btnplay.addEventListener("click", cronometro);
 torre1.posicao.addEventListener("click", seletorDeEstagio);
@@ -72,7 +72,8 @@ function soltaDisco(target) {
   }
   console.log("estagio 02");
   estagio = 1;
-
+  contadorDeJogadas++;
+  document.getElementById('jogadas').innerText = contadorDeJogadas
   condicaoDeVitoria();
 }
 
@@ -108,7 +109,7 @@ cronometro()
 
 //Score
 function marcaScore (){
-  let score = Math.floor(1000+(16.6666666667*contador))
+  let score = Math.floor(1000+(16.6666666667*contador)-(contadorDeJogadas* 100))
   document.getElementById('score').innerText = score
   console.log(score)
 }
