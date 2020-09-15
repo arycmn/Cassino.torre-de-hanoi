@@ -4,6 +4,7 @@
 }
 
 /* ------------------ ESTILIZANDO O HTML 1 - INDEX ------------------*/
+
 #body1 {
   width: 100%;
   height: 100vh;
@@ -28,6 +29,7 @@
   border: none;
   cursor: pointer;
 }
+
 #bttStart:focus {
   outline: none;
 }
@@ -111,10 +113,7 @@ section {
   background-color: red;
 }
 
-#disco1:hover,
-#disco2:hover,
-#disco3:hover,
-#disco4:hover {
+#disco1:hover, #disco2:hover, #disco3:hover, #disco4:hover {
   background-color: yellow;
 }
 
@@ -136,26 +135,30 @@ section {
   text-align: center;
 }
 
-@media (max-width: 800px) {
-  #h1-2 {
+@media(max-width: 800px) {
+  #h1-2, #h1 {
     font-size: 3rem;
   }
-
+  #h1 {
+    font-size: 8vh;
+    margin-bottom: 150px;
+  }
   .torres {
     height: 175px;
     width: 30%;
   }
-
   .discos {
     height: 25px;
   }
-
   p {
     font-size: 1.4rem;
   }
-
   #informacoes {
     width: 50%;
     padding-top: 40px;
+  }
+}
+  #bttStart {
+    font-size: 7rem;
   }
 }
