@@ -33,12 +33,12 @@ let pecaDeComparacao;
 let ultimaPeca;
 let estagio;
 let contadorDeJogadas = 0;
+let dolar = 2000;
 
 // btnplay.addEventListener("click", cronometro);
 torre1.posicao.addEventListener("click", seletorDeEstagio);
 torre2.posicao.addEventListener("click", seletorDeEstagio);
 torre3.posicao.addEventListener("click", seletorDeEstagio);
-
 
 //Função que seleciona se é estagio de pegar ou dropar o disco
 function seletorDeEstagio(e) {
@@ -73,7 +73,7 @@ function soltaDisco(target) {
   console.log("estagio 02");
   estagio = 1;
   contadorDeJogadas++;
-  document.getElementById('jogadas').innerText = contadorDeJogadas
+  document.getElementById("jogadas").innerText = contadorDeJogadas;
   condicaoDeVitoria();
 }
 
@@ -91,25 +91,28 @@ function condicaoDeVitoria() {
 }
 
 //Contador de Tempo de resolução do Desafio
-let contador = 60
-function cronometro (){
-  document.getElementById('tempo').innerText = contador
-  console.log(contador)
+let contador = 60;
+function cronometro() {
+  document.getElementById("tempo").innerText = contador;
+  console.log(contador);
 
-  if(contador == 0) {
-		alert("GAME OVER");
-	}
-	if (contador != 0){
-		contador = contador-1;
-		setTimeout("cronometro()", 1000);
+  if (contador == 0 || dolar <= 0) {
+    alert("GAME OVER");
   }
-  marcaScore()
+  if (contador != 0) {
+    contador = contador - 1;
+    setTimeout("cronometro()", 1000);
+  }
+  marcaScore();
 }
-cronometro()
+cronometro();
 
 //Score
-function marcaScore (){
-  let score = Math.floor(1000+(16.6666666667*contador)-(contadorDeJogadas* 100))
-  document.getElementById('score').innerText = score
-  console.log(score)
+function marcaScore() {
+  let score = Math.floor(
+    1000 + 16.6666666667 * contador - contadorDeJogadas * 100
+  );
+  dolar = score;
+  document.getElementById("score").innerText = score;
+  console.log(score);
 }
