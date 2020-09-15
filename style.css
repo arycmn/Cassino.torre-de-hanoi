@@ -118,10 +118,6 @@ section {
   background-color: yellow;
 }
 
-/* .torres:hover {
-  background-color: whitesmoke;
-} */
-
 #resposta {
   text-align: center;
   font-size: 10rem;
@@ -140,12 +136,8 @@ section {
   text-align: center;
 }
 
-<<<<<<< HEAD
-#sound {
-=======
-@media(max-width: 800px){
-  
-  #h1-2{
+@media (max-width: 800px) {
+  #h1-2 {
     font-size: 3rem;
   }
 
@@ -166,7 +158,4 @@ section {
     width: 50%;
     padding-top: 40px;
   }
-
- 
->>>>>>> 5131fe133990774b2d6577a4d2cf78da3bfd238e
 }
