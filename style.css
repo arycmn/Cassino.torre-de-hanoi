@@ -141,10 +141,14 @@ section {
 
 @media(max-width: 800px){
   
-  #h1-2{
+  #h1-2,#h1{
     font-size: 3rem;
   }
 
+  #h1 {
+    font-size: 2.4rem;
+    margin-bottom: 150px;
+  }
   .torres {
     height: 175px;
     width: 30%;
@@ -163,5 +167,7 @@ section {
     padding-top: 40px;
   }
 
- 
+ #bttStart {
+   font-size: 7rem;
+ }
 }
