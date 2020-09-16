@@ -83,31 +83,37 @@ function condicaoDeVitoria() {
     torre2.posicao.childElementCount === 4 ||
     torre3.posicao.childElementCount === 4
   ) {
+    //resultado(vitoria);
     let body = document.getElementById("body2");
     let div = document.createElement("div");
     div.className = "vitoria";
-    div.innerHTML = "Você Ganhou!";
+    div.innerHTML = "Você venceu!";
     body.appendChild(div);
+    reset();
   }
 }
 
 //Contador de Tempo de resolução do Desafio
 let contador = 60;
+let setTime;
+
 function cronometro() {
   document.getElementById("tempo").innerText = contador;
-  console.log(contador);
 
-  if (contador == 0 || dolar <= 0) {
-    //alert("GAME OVER");
+  if (contador === 0 || dolar <= 0) {
+    //let derrota = "Você Perdeu!";
+    //resultado(derrota);
     let body = document.getElementById("body2");
     let div = document.createElement("div");
     div.className = "derrota";
-    div.innerHTML = "Você perdeu!";
+    div.innerHTML = "Você Perdeu!";
     body.appendChild(div);
+    //reset();
   }
+
   if (contador != 0) {
+    setTime = setInterval("cronometro()", 1000);
     contador = contador - 1;
-    setTimeout("cronometro()", 1000);
   }
   marcaScore();
 }
@@ -115,10 +121,20 @@ cronometro();
 
 //Score
 function marcaScore() {
-  let score = Math.floor(
-    2000 + 16.6666666667 * contador - contadorDeJogadas * 100
-  );
-  dolar = score;
-  document.getElementById("score").innerText = score;
+  dolar = Math.floor(0 + 16.6666666667 * contador - contadorDeJogadas * 100);
+  document.getElementById("score").innerText = dolar;
   console.log(score);
 }
+
+function reset() {
+  window.clearTimeout(setTime());
+}
+
+// function resultado(mensagem) {
+//   let body = document.getElementById("body2");
+//   let div = document.createElement("div");
+//   div.className = "resultado";
+//   div.innerHTML = mensagem;
+//   body.appendChild(div);
+//   reset();
+// }
