@@ -98,6 +98,13 @@ function cronometro() {
 
   if (contador == 0 || dolar <= 0) {
     alert("GAME OVER");
+    // let body = document.getElementById("body2")
+    // let div = document.createElement("div");
+    //div.className = "vitoria";
+    // div.style.width = 100%;
+    // div.style.background = "black";
+    // div.innerHTML = "Você perdeu!";
+    //div.appendChild(body);
   }
   if (contador != 0) {
     contador = contador - 1;
