@@ -1,10 +1,13 @@
 * {
   margin: 0;
   padding: 0;
-  }
+  box-sizing: border-box;
+}
 
 /* ------------------ ESTILIZANDO O HTML 1 - INDEX ------------------*/
-
+html{
+  font-size:16px;
+}
 #body1 {
   width: 100%;
   height: 100vh;
@@ -56,6 +59,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  width: 100vw;
   text-shadow: 4px 4px 4px black;
   overflow: hidden;
   display: flex;
@@ -66,19 +70,21 @@
 section {
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+  height: 44%;
+  
 }
 
 #h1-2 {
   text-align: center;
-  margin: 40px 0px;
+  margin: 20px 0px;
+  margin-top: 0;
   font-size: 7rem;
   color: red;
 }
 
 .torres {
   width: 18%;
-  height: 450px;
+  height: 100%;
   display: flex;
   flex-direction: column-reverse;
   border-bottom: 3px outset;
@@ -108,7 +114,7 @@ section {
 }
 
 .discos {
-  height: 80px;
+  height: 12%;
   margin: 0 auto;
   border-radius: 15%;
   border-style: dashed;
@@ -129,9 +135,11 @@ section {
 
 #informacoes {
   margin: 0 auto;
-  width: 30%;
-  height: 20%;
-  font-size: 3rem;
+  margin-top: 10px;
+  width: 20%;
+  height: fit-content;
+  padding: 10px;
+  font-size: 1rem;
   background-color: yellow;
   border-radius: 20%;
   text-shadow: none;
@@ -139,40 +147,53 @@ section {
 }
 
 @media(max-width: 800px) {
+  html{
+    box-sizing: border-box;
+  }
   #h1-2, #h1 {
     font-size: 3rem;
+    margin-top: 20%;
   }
+
   #h1 {
     font-size: 8vh;
     margin-bottom: 150px;
   }
+  section {
+    height: 33%;
+  }
   .torres {
-
-    height: 175px;
+    height: 100%;
     width: 30%;
   }
   .discos {
     height: 25px;
   }
-  p {
-    font-size: 1.4rem;
-  }
+  
   #informacoes {
-    width: 50%;
-    padding-top: 40px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
   }
-}
-  #bttStart {
-    font-size: 7rem;
+  .derrota , .vitoria {
+    width: 30%;
+    font-size: 1.4rem;
   }
 }
 
-.derrota, .vitoria{
+#bttStart {
+  font-size: 7rem;
+}
+
+.derrota, .vitoria {
   width: 50%;
-  height: 20vh;
+  height: 15%;
+  padding: 10px ;
+  padding-top: 2%;
   background-color: red;
   margin: 0 auto;
-  font-size: 5rem;
+  margin-top: 10px;
+  font-size: 188%;
   border-radius: 20%;
   text-align: center;
   border: 2px solid yellow;

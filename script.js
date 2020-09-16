@@ -108,11 +108,11 @@ function cronometro() {
     div.className = "derrota";
     div.innerHTML = "Você Perdeu!";
     body.appendChild(div);
-    //reset();
+    reset();
   }
 
   if (contador != 0) {
-    setTime = setInterval("cronometro()", 1000);
+    setTime = setTimeout("cronometro()", 1000);
     contador = contador - 1;
   }
   marcaScore();
@@ -121,13 +121,13 @@ cronometro();
 
 //Score
 function marcaScore() {
-  dolar = Math.floor(0 + 16.6666666667 * contador - contadorDeJogadas * 100);
+  dolar = Math.floor(2000 + 16.6666666667 * contador - contadorDeJogadas * 100);
   document.getElementById("score").innerText = dolar;
   console.log(score);
 }
 
 function reset() {
-  window.clearTimeout(setTime());
+  clearTimeout(setTime);
 }
 
 // function resultado(mensagem) {
