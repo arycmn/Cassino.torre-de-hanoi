@@ -45,7 +45,9 @@ function seletorDeEstagio(e) {
   let target = e.currentTarget;
   if (estagio === 2) {
     soltaDisco(target);
-  } else {
+  } else if (estagio === 3){
+
+  }else{
     pegaDisco(target);
   }
 }
@@ -89,7 +91,7 @@ function condicaoDeVitoria() {
     div.className = "vitoria";
     div.innerHTML = "Você venceu!";
     body.appendChild(div);
-    reset();
+    estagio = 3;
   }
 }
 
@@ -100,18 +102,19 @@ let setTime;
 function cronometro() {
   document.getElementById("tempo").innerText = contador;
 
-  if (contador === 0 || dolar <= 0) {
-    //let derrota = "Você Perdeu!";
-    //resultado(derrota);
-    let body = document.getElementById("body2");
-    let div = document.createElement("div");
-    div.className = "derrota";
-    div.innerHTML = "Você Perdeu!";
-    body.appendChild(div);
-    reset();
-  }
+  if (contador === 0 || dolar <= 0 || estagio === 3) {
+    if (estagio === 3){
 
-  if (contador != 0) {
+    }else{
+
+      let body = document.getElementById("body2");
+      let div = document.createElement("div");
+      div.className = "derrota";
+      div.innerHTML = "Você Perdeu!";
+      body.appendChild(div);
+      estagio = 3
+    }
+  }else {
     setTime = setTimeout("cronometro()", 1000);
     contador = contador - 1;
   }
@@ -125,16 +128,3 @@ function marcaScore() {
   document.getElementById("score").innerText = dolar;
   console.log(score);
 }
-
-function reset() {
-  clearTimeout(setTime);
-}
-
-// function resultado(mensagem) {
-//   let body = document.getElementById("body2");
-//   let div = document.createElement("div");
-//   div.className = "resultado";
-//   div.innerHTML = mensagem;
-//   body.appendChild(div);
-//   reset();
-// }
