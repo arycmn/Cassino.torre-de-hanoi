@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  z-index: 2;
 }
 
 /* ------------------ ESTILIZANDO O HTML 1 - INDEX ------------------*/
@@ -58,6 +59,9 @@
   height: 100vh;
   text-shadow: 4px 4px 4px black;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  ;
 }
 
 section {
@@ -165,5 +169,23 @@ section {
 }
 
 .vitoria {
-  
+  width: 50%;
+  height: 20vh;
+  background-color:whitesmoke;
+  margin: 0 auto;
+  font-size: 5rem;
+  border-radius: 20%;
+  text-align: center;
+}
+
+.derrota{
+  width: 50%;
+  height: 20vh;
+  background-color: red;
+  margin: 0 auto;
+  font-size: 5rem;
+  border-radius: 20%;
+  text-align: center;
+  z-index: 1;
+
 }

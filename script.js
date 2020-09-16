@@ -83,10 +83,11 @@ function condicaoDeVitoria() {
     torre2.posicao.childElementCount === 4 ||
     torre3.posicao.childElementCount === 4
   ) {
-    let p = document.createElement("p");
-    let div = document.getElementById("resposta");
-    p.innerHTML = "Parabéns você Venceu!!";
-    div.appendChild(p);
+    let body = document.getElementById("body2");
+    let div = document.createElement("div");
+    div.className = "vitoria";
+    div.innerHTML = "Você Ganhou!";
+    body.appendChild(div);
   }
 }
 
@@ -97,14 +98,12 @@ function cronometro() {
   console.log(contador);
 
   if (contador == 0 || dolar <= 0) {
-    alert("GAME OVER");
-    // let body = document.getElementById("body2")
-    // let div = document.createElement("div");
-    //div.className = "vitoria";
-    // div.style.width = 100%;
-    // div.style.background = "black";
-    // div.innerHTML = "Você perdeu!";
-    //div.appendChild(body);
+    //alert("GAME OVER");
+    let body = document.getElementById("body2");
+    let div = document.createElement("div");
+    div.className = "derrota";
+    div.innerHTML = "Você perdeu!";
+    body.appendChild(div);
   }
   if (contador != 0) {
     contador = contador - 1;
